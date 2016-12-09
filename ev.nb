@@ -1,0 +1,124 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      3816,        116]
+NotebookOptionsPosition[      3476,         99]
+NotebookOutlinePosition[      3806,        114]
+CellTagsIndexPosition[      3763,        111]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"numberOfAgents", " ", "=", " ", "10"}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"agentPayoffs", " ", "=", " ", 
+   RowBox[{"{", "}"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"agentToolNeeds", "=", 
+   RowBox[{"Array", "[", 
+    RowBox[{
+     RowBox[{"Function", "[", 
+      RowBox[{"x", ",", 
+       RowBox[{"RandomReal", "[", "]"}]}], "]"}], ",", "numberOfAgents"}], 
+    "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"agentParams", " ", "=", " ", 
+    RowBox[{"Array", "[", 
+     RowBox[{
+      RowBox[{"Function", "[", 
+       RowBox[{"x", ",", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"RandomReal", "[", "]"}], ",", 
+          RowBox[{"RandomReal", "[", "]"}]}], "}"}]}], "]"}], ",", 
+      "numberOfAgents"}], "]"}]}], ";"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]"}], "Input",
+ CellChangeTimes->{{3.690276674849732*^9, 3.690276687579483*^9}, {
+  3.690276718723686*^9, 3.690276728832509*^9}, {3.690277182681115*^9, 
+  3.690277194787217*^9}, {3.690277367434849*^9, 3.69027737533843*^9}, {
+  3.6902775163670473`*^9, 3.690277526689817*^9}, {3.690277627149282*^9, 
+  3.690277653285708*^9}, {3.690277698251495*^9, 3.690277724036525*^9}, {
+  3.6902778161524973`*^9, 3.6902778596326027`*^9}, {3.690278588514905*^9, 
+  3.690278590872459*^9}, {3.690278679760458*^9, 3.690278803461891*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+  "0.3929872733223436`", ",", "0.15276431830599235`", ",", 
+   "0.5404673803166082`", ",", "0.2339858613101422`", ",", 
+   "0.5444149942391803`", ",", "0.5514858439419794`", ",", 
+   "0.9409363007477032`", ",", "0.6924256619477551`", ",", 
+   "0.7221484361724209`", ",", "0.8898169288836417`"}], "}"}]], "Output",
+ CellChangeTimes->{3.690278797881217*^9}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"0.46122399622540944`", ",", "0.7178157163718764`"}], "}"}], ",", 
+   
+   RowBox[{"{", 
+    RowBox[{"0.44815271113917654`", ",", "0.8991108796605634`"}], "}"}], ",", 
+   
+   RowBox[{"{", 
+    RowBox[{"0.06290895165129506`", ",", "0.09918709978668838`"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"0.8707818175372706`", ",", "0.9328683822883959`"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"0.44895481974144635`", ",", "0.4769093649036773`"}], "}"}], ",", 
+   
+   RowBox[{"{", 
+    RowBox[{"0.1447393453487278`", ",", "0.07012039534044678`"}], "}"}], ",", 
+   
+   RowBox[{"{", 
+    RowBox[{"0.3608802506842421`", ",", "0.2534532141380368`"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"0.8794930792415381`", ",", "0.3858096900156782`"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"0.49560231189366744`", ",", "0.11914058151534102`"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"0.47469154266962454`", ",", "0.02825595731611097`"}], "}"}]}], 
+  "}"}]], "Output",
+ CellChangeTimes->{3.6902787978829823`*^9}]
+}, Open  ]]
+},
+WindowSize->{673, 732},
+WindowMargins->{{Automatic, 4}, {4, 32}},
+FrontEndVersion->"11.0 for Linux x86 (64-bit) (September 21, 2016)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 1403, 34, 170, "Input"],
+Cell[1986, 58, 395, 8, 57, "Output"],
+Cell[2384, 68, 1076, 28, 103, "Output"]
+}, Open  ]]
+}
+]
+*)
+
