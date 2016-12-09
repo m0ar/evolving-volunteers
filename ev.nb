@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[      7719,        187]
-NotebookOptionsPosition[      7448,        173]
-NotebookOutlinePosition[      7781,        188]
-CellTagsIndexPosition[      7738,        185]
+NotebookDataLength[      9991,        249]
+NotebookOptionsPosition[      9454,        226]
+NotebookOutlinePosition[      9791,        241]
+CellTagsIndexPosition[      9748,        238]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -31,6 +31,9 @@ Cell[BoxData[{
  RowBox[{
   RowBox[{"waitUtil", " ", "=", " ", 
    RowBox[{"-", "1"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"toolsInPool", " ", "=", " ", "10"}], 
+  ";"}], "\[IndentingNewLine]", 
  RowBox[{
   RowBox[{"agentPayoffs", " ", "=", " ", 
    RowBox[{"{", "}"}]}], ";"}], "\[IndentingNewLine]", 
@@ -69,7 +72,10 @@ Cell[BoxData[{
    3.690280206255906*^9}, {3.6902802426522093`*^9, 3.6902802924481907`*^9}, {
    3.6902803278094893`*^9, 3.690280329106987*^9}, {3.6902804900207157`*^9, 
    3.69028050196609*^9}, {3.690280676040114*^9, 3.690280685477113*^9}, {
-   3.690283927764642*^9, 3.6902839469161987`*^9}}],
+   3.690283927764642*^9, 3.6902839469161987`*^9}, {3.690289098550913*^9, 
+   3.6902891115954123`*^9}}],
+
+Cell[CellGroupData[{
 
 Cell[BoxData[
  RowBox[{
@@ -82,7 +88,7 @@ Cell[BoxData[
    RowBox[{
     RowBox[{
      RowBox[{"CalculatePayoff", "[", 
-      RowBox[{"p_", ",", "pb_", ",", "pd_"}], "]"}], ":=", 
+      RowBox[{"p_", ",", "pb_", ",", "pd_", ",", "hasTool_"}], "]"}], ":=", 
      "\[IndentingNewLine]", 
      RowBox[{"If", "[", 
       RowBox[{
@@ -95,7 +101,7 @@ Cell[BoxData[
           RowBox[{"RandomReal", "[", "]"}], "<", "pb"}], ",", 
          "\[IndentingNewLine]", 
          RowBox[{"If", "[", 
-          RowBox[{"agentHasTool", ",", " ", 
+          RowBox[{"hasTool", ",", " ", 
            RowBox[{"{", 
             RowBox[{"usageUtil", ",", " ", "True"}], "}"}], ",", 
            RowBox[{"{", 
@@ -103,9 +109,13 @@ Cell[BoxData[
              RowBox[{"buyCost", "-", "usageUtil"}], ",", " ", "True"}], 
             "}"}]}], "]"}], ",", "\[IndentingNewLine]", 
          RowBox[{"If", "[", 
-          RowBox[{"toolInPool", ",", " ", 
-           RowBox[{"{", 
-            RowBox[{"usageUtil", ",", " ", "False"}], "}"}], ",", " ", 
+          RowBox[{
+           RowBox[{"toolsInPool", ">", "0"}], ",", " ", "\[IndentingNewLine]", 
+           RowBox[{
+            RowBox[{"toolsInPool", " ", "-=", "1"}], ";", 
+            RowBox[{"{", 
+             RowBox[{"usageUtil", ",", " ", "False"}], "}"}]}], ",", 
+           "\[IndentingNewLine]", 
            RowBox[{"{", 
             RowBox[{"waitUtil", ",", "False"}], "}"}]}], "]"}]}], 
         "\[IndentingNewLine]", "]"}], ",", "\[IndentingNewLine]", 
@@ -113,42 +123,17 @@ Cell[BoxData[
         RowBox[{
          RowBox[{
           RowBox[{"RandomReal", "[", "]"}], "<", "pd"}], ",", 
-         "\[IndentingNewLine]", "donationCost", ",", "\[IndentingNewLine]", 
-         "0"}], "\[IndentingNewLine]", "]"}]}], "\[IndentingNewLine]", 
-      "]"}]}], ";"}], "\[IndentingNewLine]", "\[IndentingNewLine]", 
-   RowBox[{
-    RowBox[{
-     RowBox[{"MutateAgent", "[", "vv_", "]"}], " ", ":=", " ", 
-     RowBox[{"Module", "[", 
-      RowBox[{
-       RowBox[{"{", 
-        RowBox[{"v", "=", "vv"}], "}"}], ",", "\[IndentingNewLine]", 
-       RowBox[{
-        RowBox[{"If", "[", 
-         RowBox[{
-          RowBox[{"v", ">", "0.5"}], ",", 
-          RowBox[{"distance", " ", "=", " ", 
-           RowBox[{"1", "-", "v"}]}], ",", 
-          RowBox[{"distance", " ", "=", "v"}]}], "]"}], ";", 
-        "\[IndentingNewLine]", 
-        RowBox[{"value", ":=", 
-         RowBox[{"RandomVariate", "[", 
-          RowBox[{"NormalDistribution", "[", 
-           RowBox[{"v", ",", 
-            RowBox[{
-             RowBox[{"(", 
-              RowBox[{"distance", "/", "4"}], ")"}], "+", "0.1"}]}], "]"}], 
-          "]"}]}], ";", "\[IndentingNewLine]", 
-        RowBox[{"Print", "[", "value", "]"}], ";", "\[IndentingNewLine]", 
-        RowBox[{"Return", "[", 
-         RowBox[{"If", "[", 
-          RowBox[{
-           RowBox[{"value", "<=", "0"}], ",", "0", ",", 
-           RowBox[{"Min", "[", 
-            RowBox[{"value", ",", "1"}], "]"}]}], "]"}], "]"}], ";"}]}], 
-      "\[IndentingNewLine]", "]"}]}], ";"}], "\[IndentingNewLine]", 
-   RowBox[{"MutateAgent", "[", "0", "]"}], "\[IndentingNewLine]", 
-   "\[IndentingNewLine]"}]}]], "Input",
+         "\[IndentingNewLine]", 
+         RowBox[{"{", 
+          RowBox[{"donationCost", ",", "False"}], "}"}], ",", 
+         "\[IndentingNewLine]", 
+         RowBox[{"{", 
+          RowBox[{"0", ",", "False"}], "}"}]}], "\[IndentingNewLine]", 
+        "]"}]}], "\[IndentingNewLine]", "]"}]}], ";"}], "\[IndentingNewLine]",
+    "\[IndentingNewLine]", 
+   RowBox[{"CalculatePayoff", "[", 
+    RowBox[{"0", ",", "0", ",", "1", ",", "True"}], "]"}], 
+   "\[IndentingNewLine]", "toolsInPool"}]}]], "Input",
  CellChangeTimes->{{3.6902798722561083`*^9, 3.690279927592375*^9}, {
    3.690279985129624*^9, 3.690280054158381*^9}, {3.690280096647526*^9, 
    3.690280216858121*^9}, {3.6902802979550123`*^9, 3.690280309161378*^9}, {
@@ -169,11 +154,79 @@ Cell[BoxData[
    3.690285943209098*^9}, {3.690286091148567*^9, 3.6902861526360893`*^9}, 
    3.690286189021058*^9, {3.690286274721895*^9, 3.6902862759068317`*^9}, {
    3.6902864556042967`*^9, 3.6902864655392*^9}, {3.690286605736759*^9, 
-   3.690286607137494*^9}, {3.690286646655941*^9, 3.690286661912516*^9}}]
+   3.690286607137494*^9}, {3.690286646655941*^9, 3.690286661912516*^9}, {
+   3.690288961012793*^9, 3.690288968409033*^9}, {3.6902891160556173`*^9, 
+   3.6902891305976553`*^9}, {3.690289161792665*^9, 3.6902892377963667`*^9}, {
+   3.69028927298111*^9, 3.690289273657343*^9}, {3.6902894177690487`*^9, 
+   3.690289506198346*^9}, {3.690289685481657*^9, 3.690289706197348*^9}, {
+   3.6902901301418867`*^9, 3.690290164005844*^9}, {3.69029019764708*^9, 
+   3.6902901977578373`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"10", ",", "False"}], "}"}]], "Output",
+ CellChangeTimes->{{3.690289225626734*^9, 3.6902892386556873`*^9}, 
+   3.69028927422895*^9, {3.6902894282380133`*^9, 3.690289451735571*^9}, {
+   3.6902894830658407`*^9, 3.6902894877380667`*^9}, 3.690289939196377*^9, {
+   3.690290158523115*^9, 3.6902901645351887`*^9}, {3.6902901946162443`*^9, 
+   3.6902901982135344`*^9}}],
+
+Cell[BoxData["4"], "Output",
+ CellChangeTimes->{{3.690289225626734*^9, 3.6902892386556873`*^9}, 
+   3.69028927422895*^9, {3.6902894282380133`*^9, 3.690289451735571*^9}, {
+   3.6902894830658407`*^9, 3.6902894877380667`*^9}, 3.690289939196377*^9, {
+   3.690290158523115*^9, 3.6902901645351887`*^9}, {3.6902901946162443`*^9, 
+   3.690290198215891*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{"MutateAgent", "[", "vv_", "]"}], " ", ":=", " ", 
+   RowBox[{"Module", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"v", "=", "vv"}], "}"}], ",", "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{"If", "[", 
+       RowBox[{
+        RowBox[{"v", ">", "0.5"}], ",", 
+        RowBox[{"distance", " ", "=", " ", 
+         RowBox[{"1", "-", "v"}]}], ",", 
+        RowBox[{"distance", " ", "=", "v"}]}], "]"}], ";", 
+      "\[IndentingNewLine]", 
+      RowBox[{"value", ":=", 
+       RowBox[{"RandomVariate", "[", 
+        RowBox[{"NormalDistribution", "[", 
+         RowBox[{"v", ",", 
+          RowBox[{
+           RowBox[{"(", 
+            RowBox[{"distance", "/", "4"}], ")"}], "+", "0.1"}]}], "]"}], 
+        "]"}]}], ";", "\[IndentingNewLine]", 
+      RowBox[{"Print", "[", "value", "]"}], ";", "\[IndentingNewLine]", 
+      RowBox[{"Return", "[", 
+       RowBox[{"If", "[", 
+        RowBox[{
+         RowBox[{"value", "<=", "0"}], ",", "0", ",", 
+         RowBox[{"Min", "[", 
+          RowBox[{"value", ",", "1"}], "]"}]}], "]"}], "]"}], ";"}]}], 
+    "\[IndentingNewLine]", "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{"MutateAgent", "[", "0", "]"}]}], "Input"],
+
+Cell[BoxData[
+ RowBox[{"-", "0.008088861670464057`"}]], "Print",
+ CellChangeTimes->{{3.690288971320313*^9, 3.690289005187023*^9}}],
+
+Cell[BoxData[
+ RowBox[{"-", "0.11874996205428731`"}]], "Output",
+ CellChangeTimes->{{3.6902889713212433`*^9, 3.690289005188176*^9}}]
+}, Open  ]]
 },
-WindowSize->{1366, 744},
-WindowMargins->{{0, Automatic}, {Automatic, 0}},
-FrontEndVersion->"10.2 for Linux x86 (64-bit) (July 29, 2015)",
+WindowSize->{673, 732},
+WindowMargins->{{Automatic, 4}, {4, Automatic}},
+FrontEndVersion->"11.0 for Linux x86 (64-bit) (September 21, 2016)",
 StyleDefinitions->"Default.nb"
 ]
 (* End of Notebook Content *)
@@ -187,8 +240,17 @@ CellTagsIndex->{}
 *)
 (*NotebookFileOutline
 Notebook[{
-Cell[558, 20, 2298, 51, 209, "Input"],
-Cell[2859, 73, 4585, 98, 495, "Input"]
+Cell[558, 20, 2442, 55, 264, "Input"],
+Cell[CellGroupData[{
+Cell[3025, 79, 4127, 83, 398, "Input"],
+Cell[7155, 164, 401, 7, 34, "Output"],
+Cell[7559, 173, 349, 5, 32, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[7945, 183, 1225, 32, 193, "Input"],
+Cell[9173, 217, 130, 2, 24, "Print"],
+Cell[9306, 221, 132, 2, 32, "Output"]
+}, Open  ]]
 }
 ]
 *)
