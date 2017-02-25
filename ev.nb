@@ -10,14 +10,19 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[    790571,      13929]
-NotebookOptionsPosition[    788815,      13874]
-NotebookOutlinePosition[    789219,      13890]
-CellTagsIndexPosition[    789176,      13887]
+NotebookDataLength[    791877,      13983]
+NotebookOptionsPosition[    789671,      13910]
+NotebookOutlinePosition[    790075,      13926]
+CellTagsIndexPosition[    790032,      13923]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
 Notebook[{
+
+Cell[CellGroupData[{
+Cell["Variables and help functions", "Section",
+ CellChangeTimes->{{3.697003311995122*^9, 3.697003318583617*^9}}],
+
 Cell[BoxData[{
  RowBox[{
   RowBox[{"numberOfAgents", " ", "=", " ", "100"}], 
@@ -363,7 +368,13 @@ Cell[BoxData["0.13162656373076156`"], "Output",
    3.693228829584053*^9, 3.6932289387415457`*^9, 3.693229608985512*^9, 
    3.693229734618039*^9, 3.6932298151815023`*^9, 3.6932302847207127`*^9, 
    3.693230383854281*^9, 3.693292891783635*^9, 3.694362210059411*^9}]
-}, Open  ]],
+}, Open  ]]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["doround", "Section",
+ CellChangeTimes->{{3.697002997214993*^9, 3.69700299935772*^9}}],
 
 Cell[BoxData[
  RowBox[{
@@ -496,7 +507,13 @@ Cell[BoxData[
    3.691479761860888*^9}, {3.691479818037862*^9, 3.691479851379369*^9}, {
    3.6914803627635927`*^9, 3.6914803696011066`*^9}, {3.691480441547461*^9, 
    3.691480444240184*^9}, 3.691480551634653*^9, {3.691481744230379*^9, 
-   3.69148176226075*^9}, 3.691481915488463*^9}],
+   3.69148176226075*^9}, 3.691481915488463*^9}]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["Simulation with pool resetting", "Section",
+ CellChangeTimes->{{3.6970032322837563`*^9, 3.697003241510738*^9}}],
 
 Cell["\<\
 Simulation clears pool health after each round. This means that mutated \
@@ -623,6 +640,11 @@ Cell[BoxData[
    3.693229976813119*^9}, {3.693230085683043*^9, 3.693230090766459*^9}, {
    3.693230275476486*^9, 3.6932302822311773`*^9}, {3.693230366661414*^9, 
    3.693230378784966*^9}}],
+
+Cell[CellGroupData[{
+
+Cell["results", "Subsection",
+ CellChangeTimes->{{3.69700320785411*^9, 3.697003209014617*^9}}],
 
 Cell[CellGroupData[{
 
@@ -12007,7 +12029,14 @@ I28W76e3N/QMF82aejMvCSkr9EdG0lzOS7H2Y6+nmniPlXGhSjtHo/9Zcz+p
 IRz47i96JPmp8Ds21VLxyNlXqJE69aPJt6axYqA9xfGj79m/p/yv/weoeAd4
 \
 \>"]]
+}, Open  ]]
+}, Closed]]
 }, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Simulation for not resetting tool usage", "Section",
+ CellChangeTimes->{{3.697003140210741*^9, 3.697003151590392*^9}}],
 
 Cell["\<\
 Simulation runs with agents mutating while pool is still functioning. Now if \
@@ -12175,6 +12204,11 @@ Cell[BoxData[
    3.691913965225007*^9, 3.691914100119114*^9}, 3.6919141798234673`*^9, {
    3.693228930221939*^9, 3.6932289332170887`*^9}, {3.694362199599862*^9, 
    3.6943622041218863`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell["Results", "Subsection",
+ CellChangeTimes->{{3.697003181242982*^9, 3.697003185311596*^9}}],
 
 Cell["\<\
 Run the model with 80 initial tools. We see a drop off after 500 rounds. This \
@@ -13871,6 +13905,8 @@ Cell["", "Text",
  CellChangeTimes->{{3.691914373326466*^9, 3.691914416589304*^9}, {
   3.691915037766243*^9, 3.6919150461272783`*^9}, {3.691915499378331*^9, 
   3.6919155187257137`*^9}}]
+}, Closed]]
+}, Open  ]]
 },
 WindowSize->{1366, 744},
 WindowMargins->{{0, Automatic}, {Automatic, 0}},
@@ -13889,48 +13925,66 @@ CellTagsIndex->{}
 *)
 (*NotebookFileOutline
 Notebook[{
-Cell[558, 20, 5030, 91, 372, "Input"],
-Cell[5591, 113, 275, 5, 31, "Text"],
 Cell[CellGroupData[{
-Cell[5891, 122, 7635, 145, 614, "Input"],
-Cell[13529, 269, 669, 12, 41, "Output"]
+Cell[580, 22, 113, 1, 67, "Section"],
+Cell[696, 25, 5030, 91, 372, "Input"],
+Cell[5729, 118, 275, 5, 31, "Text"],
+Cell[CellGroupData[{
+Cell[6029, 127, 7635, 145, 614, "Input"],
+Cell[13667, 274, 669, 12, 41, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[14235, 286, 2515, 64, 240, "Input"],
-Cell[16753, 352, 918, 12, 41, "Output"]
-}, Open  ]],
-Cell[17686, 367, 7018, 131, 482, "Input"],
-Cell[24707, 500, 194, 4, 31, "Text"],
-Cell[24904, 506, 5259, 118, 394, "Input"],
+Cell[14373, 291, 2515, 64, 240, "Input"],
+Cell[16891, 357, 918, 12, 41, "Output"]
+}, Open  ]]
+}, Closed]],
 Cell[CellGroupData[{
-Cell[30188, 628, 1061, 34, 108, "Input"],
-Cell[31252, 664, 2314, 54, 228, "Output"],
-Cell[33569, 720, 553, 8, 41, "Output"],
-Cell[34125, 730, 12837, 402, 482, "Output"]
-}, Open  ]],
-Cell[46977, 1135, 332, 6, 31, "Text"],
+Cell[17858, 375, 91, 1, 53, "Section"],
+Cell[17952, 378, 7018, 131, 482, "Input"]
+}, Closed]],
 Cell[CellGroupData[{
-Cell[47334, 1145, 1758, 43, 174, "Input"],
-Cell[49095, 1190, 660121, 10818, 262, 533785, 8746, "CachedBoxData", \
+Cell[25007, 514, 117, 1, 53, "Section"],
+Cell[25127, 517, 194, 4, 31, "Text"],
+Cell[25324, 523, 5259, 118, 394, "Input"],
+Cell[CellGroupData[{
+Cell[30608, 645, 94, 1, 32, "Subsection"],
+Cell[CellGroupData[{
+Cell[30727, 650, 1061, 34, 108, "Input"],
+Cell[31791, 686, 2314, 54, 228, "Output"],
+Cell[34108, 742, 553, 8, 41, "Output"],
+Cell[34664, 752, 12837, 402, 482, "Output"]
+}, Open  ]],
+Cell[47516, 1157, 332, 6, 31, "Text"],
+Cell[CellGroupData[{
+Cell[47873, 1167, 1758, 43, 174, "Input"],
+Cell[49634, 1212, 660121, 10818, 262, 533785, 8746, "CachedBoxData", \
 "BoxData", "Output"]
+}, Open  ]]
+}, Closed]]
 }, Open  ]],
-Cell[709231, 12011, 266, 5, 31, "Text"],
-Cell[709500, 12018, 6719, 158, 504, "Input"],
-Cell[716222, 12178, 603, 9, 51, "Text"],
 Cell[CellGroupData[{
-Cell[716850, 12191, 1561, 41, 130, "Input"],
-Cell[718414, 12234, 20918, 387, 228, "Output"],
-Cell[739335, 12623, 2209, 49, 239, "Output"],
-Cell[741547, 12674, 13605, 398, 526, "Output"]
-}, Open  ]],
-Cell[755167, 13075, 512, 8, 31, "Text"],
+Cell[709816, 12037, 124, 1, 67, "Section"],
+Cell[709943, 12040, 266, 5, 31, "Text"],
+Cell[710212, 12047, 6719, 158, 504, "Input"],
 Cell[CellGroupData[{
-Cell[755704, 13087, 1408, 39, 130, "Input"],
-Cell[757115, 13128, 16404, 295, 228, "Output"],
-Cell[773522, 13425, 2064, 48, 239, "Output"],
-Cell[775589, 13475, 13023, 391, 482, "Output"]
+Cell[716956, 12209, 95, 1, 32, "Subsection"],
+Cell[717054, 12212, 603, 9, 51, "Text"],
+Cell[CellGroupData[{
+Cell[717682, 12225, 1561, 41, 130, "Input"],
+Cell[719246, 12268, 20918, 387, 228, "Output"],
+Cell[740167, 12657, 2209, 49, 239, "Output"],
+Cell[742379, 12708, 13605, 398, 526, "Output"]
 }, Open  ]],
-Cell[788627, 13869, 184, 3, 30, "Text"]
+Cell[755999, 13109, 512, 8, 31, "Text"],
+Cell[CellGroupData[{
+Cell[756536, 13121, 1408, 39, 130, "Input"],
+Cell[757947, 13162, 16404, 295, 228, "Output"],
+Cell[774354, 13459, 2064, 48, 239, "Output"],
+Cell[776421, 13509, 13023, 391, 482, "Output"]
+}, Open  ]],
+Cell[789459, 13903, 184, 3, 30, "Text"]
+}, Closed]]
+}, Open  ]]
 }
 ]
 *)
